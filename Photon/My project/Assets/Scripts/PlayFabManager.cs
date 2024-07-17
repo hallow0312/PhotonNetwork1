@@ -49,7 +49,7 @@ public class PlayFabManager : MonoBehaviourPunCallbacks
             Email=email.text,
             Password = password.text
         };
-        PlayFabClientAPI.LoginWithEmailAddress
+        PlayFabClientAPI.LoginWithEmailAddress  
         (   request,
             Success,
             Failure

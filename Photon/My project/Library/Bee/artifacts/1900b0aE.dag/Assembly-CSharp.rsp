@@ -387,6 +387,7 @@
 "Assets/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/Alarm.cs"
+"Assets/Scripts/Connect Server.cs"
 "Assets/Scripts/PlayFabManager.cs"
 -langversion:9.0
 
