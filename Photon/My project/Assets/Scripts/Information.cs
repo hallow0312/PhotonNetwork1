@@ -2,6 +2,7 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 using UnityEngine.UI;
+using System;
 public class Information : MonoBehaviourPunCallbacks
 {
     public TextMeshProUGUI textMeshProUGUI;
@@ -17,5 +18,10 @@ public class Information : MonoBehaviourPunCallbacks
         textMeshProUGUI.alignment = TextAlignmentOptions.Center;
         textMeshProUGUI.text = name + "(" + currentStaff + " / " + maxStaff + ")"; 
 
+    }
+
+    internal void SetData(string name, int playerCount, int maxPlayers)
+    {
+        throw new NotImplementedException();
     }
 }
