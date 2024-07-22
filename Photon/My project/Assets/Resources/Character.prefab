@@ -256,6 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9e61424ff13ea4ca0445b2b64ec2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseX: 0
+  speed: 0
+  direction: {x: 0, y: 0, z: 0}
+  temporaryCamera: {fileID: 8343373905820586123}
 --- !u!95 &2065854000946057807
 Animator:
   serializedVersion: 5

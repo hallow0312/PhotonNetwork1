@@ -1,13 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
 
-public class Controller : MonoBehaviour
+public class Controller : MonoBehaviourPun
 {
-    // Start is called before the first frame update
+    [SerializeField] float mouseX;
+    [SerializeField] float speed;
+
+    [SerializeField] Vector3 direction;
+    [SerializeField] Camera temporaryCamera;
+
     void Start()
     {
-        
+       if(photonView.IsMine)
+        {
+            Camera.main.gameObject.SetActive(false);
+        }
+        else
+        {
+            temporaryCamera.enabled = false;
+            GetComponentInChildren<AudioListener>().enabled = false;
+
+        }
     }
 
     // Update is called once per frame

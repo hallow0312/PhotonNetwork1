@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine.UIElements;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+    
+    private void Awake()
+    {
+        Create();
+    }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Create()
     {
-        
+       
+        PhotonNetwork.Instantiate("Character", RandomPosition(3), Quaternion.identity);
+            
     }
+   public Vector3 RandomPosition(int value)
+    {
+        Vector3 direction = Random.insideUnitSphere.normalized;
+        
+        direction *= value;
+        direction.y = 1;
+        return direction;
+    }
+    
 }
