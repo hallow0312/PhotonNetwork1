@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 4736714219793046370}
   - component: {fileID: 7886073813571008638}
   - component: {fileID: 5076520928997936375}
+  - component: {fileID: 4133912237490532540}
   m_Layer: 3
   m_Name: Character
   m_TagString: Untagged
@@ -418,6 +419,7 @@ MonoBehaviour:
   temporaryCamera: {fileID: 8343373905820586123}
   move: {fileID: 0}
   rotate: {fileID: 0}
+  mouse: {fileID: 0}
 --- !u!114 &7886073813571008638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +448,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSpeed: 200
   direction: {x: 0, y: 0, z: 0}
+--- !u!114 &4133912237490532540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471588492009729347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5c3ba8f3065df458a717cd1e610bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6324670090018758245
 GameObject:
   m_ObjectHideFlags: 0
