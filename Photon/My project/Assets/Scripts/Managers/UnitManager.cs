@@ -1,21 +1,28 @@
 using Photon.Pun;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
-    [SerializeField] GameManager monsterPrefab;
-   
+
+    [SerializeField] GameObject monsterPrefab; 
+    [SerializeField] Vector3 direction;
     private void Start()
-    {
+    {   
         
+        StartCoroutine(CreateMonster());
     }
     
     IEnumerator CreateMonster()
     {
-        yield return new WaitForSeconds(2.0f);
-        
+        while (true)
+        {
+            yield return new WaitForSeconds(5.0f);
+            direction.x = Random.Range(5, 10);
+            direction.z = Random.Range(5, 10);
+            direction.y = 1.0f;
+            monsterPrefab = Resources.Load<GameObject>("Unit");
+            PhotonNetwork.InstantiateRoomObject(monsterPrefab.name, direction, Quaternion.identity);
+        }
     }
 }
