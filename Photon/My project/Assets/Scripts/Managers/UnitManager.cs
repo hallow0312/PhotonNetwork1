@@ -1,28 +1,43 @@
 using Photon.Pun;
 using System.Collections;
 using UnityEngine;
+using Photon.Realtime;
 
-public class UnitManager : MonoBehaviour
+public class UnitManager : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] GameObject monsterPrefab; 
-    [SerializeField] Vector3 direction;
-    private void Start()
-    {   
+    
+    [SerializeField] float time =5.0f;
         
-        StartCoroutine(CreateMonster());
+    private void Start()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(CreateMonster());
+        }
     }
     
     IEnumerator CreateMonster()
     {
+        WaitForSeconds waitForSeconds = new WaitForSeconds(time);
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
-            direction.x = Random.Range(5, 10);
-            direction.z = Random.Range(5, 10);
-            direction.y = 1.0f;
-            monsterPrefab = Resources.Load<GameObject>("Unit");
-            PhotonNetwork.InstantiateRoomObject(monsterPrefab.name, direction, Quaternion.identity);
+            PhotonNetwork.InstantiateRoomObject("Unit", Vector3.zero, Quaternion.identity);
+            yield return waitForSeconds;
+            
         }
     }
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        PhotonNetwork.SetMasterClient(PhotonNetwork.PlayerList[0]);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(CreateMonster());
+        }
+    }
+
+
+
+
 }

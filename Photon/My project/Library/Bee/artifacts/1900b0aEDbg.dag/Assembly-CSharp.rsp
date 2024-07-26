@@ -387,14 +387,15 @@
 "Assets/Scripts/CharacterFunction/Mouse.cs"
 "Assets/Scripts/CharacterFunction/Move.cs"
 "Assets/Scripts/CharacterFunction/Rotate.cs"
+"Assets/Scripts/ChatManager.cs"
 "Assets/Scripts/Connect Server.cs"
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/PlayFabManager.cs"
 "Assets/Scripts/Managers/RoomManager.cs"
 "Assets/Scripts/Managers/UnitManager.cs"
-"Assets/Scripts/Pause.cs"
 "Assets/Scripts/Ui/Alarm.cs"
 "Assets/Scripts/Ui/Information.cs"
+"Assets/Scripts/Ui/Pause.cs"
 -langversion:9.0
 
 /deterministic
