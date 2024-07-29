@@ -3,6 +3,7 @@ using UnityEngine;
 using Photon.Realtime;
 using TMPro;
 using UnityEditor.Rendering;
+using Unity.VisualScripting;
 
 public class ConnectServer : MonoBehaviourPunCallbacks
 {
@@ -20,6 +21,12 @@ public class ConnectServer : MonoBehaviourPunCallbacks
         {
             canvasLobby.gameObject.SetActive(false);
         }
+       if(PlayerPrefs.GetString("NickName")=="")
+        {
+            Instantiate(Resources.Load<GameObject>("NickNamePoPUp"));
+           
+        }
+        
     }
     public void SelectServer()
     {

@@ -2672,6 +2672,7 @@ MonoBehaviour:
   canvasRoom: {fileID: 1124723269}
   canvasLobby: {fileID: 2086784441}
   server: {fileID: 4436498}
+  nicknamePopUp: {fileID: 2035727036106412672, guid: b5509da70f9ada842b358368a1b3b27d, type: 3}
 --- !u!4 &1508144506
 Transform:
   m_ObjectHideFlags: 0
