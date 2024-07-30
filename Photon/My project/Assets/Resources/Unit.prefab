@@ -176,7 +176,7 @@ MonoBehaviour:
   state: 0
   UnitSpeed: 5
   tower: {fileID: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 4281245570345711121}
 --- !u!135 &1693415366946245544
 SphereCollider:
   m_ObjectHideFlags: 0
