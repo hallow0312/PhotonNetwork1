@@ -2,14 +2,15 @@ using Photon.Pun;
 using System.Collections;
 using UnityEngine;
 using Photon.Realtime;
+using Photon.Chat.UtilityScripts;
 
 public class UnitManager : MonoBehaviourPunCallbacks
 {
 
-    [SerializeField] GameObject monsterPrefab; 
-    
+    [SerializeField] GameObject monsterPrefab;
+    [SerializeField] GameObject[] spawner;
     [SerializeField] float time =5.0f;
-        
+    [SerializeField] int num;
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
@@ -23,7 +24,9 @@ public class UnitManager : MonoBehaviourPunCallbacks
         WaitForSeconds waitForSeconds = new WaitForSeconds(time);
         while (true)
         {
-            PhotonNetwork.InstantiateRoomObject("Unit", Vector3.zero, Quaternion.identity);
+            num = Random.Range(0, spawner.Length);
+
+            PhotonNetwork.InstantiateRoomObject("Unit", spawner[num].transform.position , Quaternion.identity);
             yield return waitForSeconds;
             
         }
@@ -38,6 +41,6 @@ public class UnitManager : MonoBehaviourPunCallbacks
     }
 
 
-
+   
 
 }
