@@ -13,7 +13,8 @@ public class Rotate : MonoBehaviour
         direction.y = y * mouseSpeed;
         direction.z=z * mouseSpeed;
 
-        transform.eulerAngles += direction * mouseSpeed*Time.deltaTime;
+        Mathf.Clamp(direction.x, -45, 60);
+        transform.eulerAngles += direction *Time.deltaTime;
         
     }
 }

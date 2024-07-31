@@ -384,6 +384,7 @@
 "Assets/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/CharacterFunction/Controller.cs"
+"Assets/Scripts/CharacterFunction/Head.cs"
 "Assets/Scripts/CharacterFunction/Mouse.cs"
 "Assets/Scripts/CharacterFunction/Move.cs"
 "Assets/Scripts/CharacterFunction/Rotate.cs"
@@ -397,6 +398,7 @@
 "Assets/Scripts/Ui/Alarm.cs"
 "Assets/Scripts/Ui/Information.cs"
 "Assets/Scripts/Ui/Pause.cs"
+"Assets/Scripts/Unit.cs"
 "Assets/Scripts/View.cs"
 -langversion:9.0
 

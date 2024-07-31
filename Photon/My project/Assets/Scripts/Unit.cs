@@ -25,12 +25,9 @@ public class Unit : MonoBehaviour
     {
         switch(state)
         {
-            case State.RUN:
-
-                Run();
+            case State.RUN: Run();
                 break;
-                case State.ATTACK:
-                anim.SetTrigger("Attack");
+                case State.ATTACK: Attack();
                 break;
                 case State.DIE:
                 Debug.Log("Die");
@@ -51,5 +48,10 @@ public class Unit : MonoBehaviour
             state = State.ATTACK;
         }
 
+    }
+    public void Attack()
+    {
+        anim.SetTrigger("Attack");
+    
     }
 }
