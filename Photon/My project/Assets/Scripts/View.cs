@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class View : MonoBehaviour
+public class View : MonoBehaviourPunCallbacks
 {
     [SerializeField] TMP_Text nickName;
 
     private void Start()
     {
-        nickName.text = PhotonNetwork.NickName;
+        nickName.text = photonView.Owner.NickName;
     }
     public void Update()
     {

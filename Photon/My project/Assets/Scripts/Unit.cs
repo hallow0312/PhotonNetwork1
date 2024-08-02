@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +15,10 @@ public class Unit : MonoBehaviour
     [SerializeField] float UnitSpeed = 2.0f;
     [SerializeField] GameObject tower;
     [SerializeField] Animator anim;
+    [SerializeField] float health;
     private void Start()
     {
+        health = 100.0f;
         state = State.RUN;
         tower = GameObject.Find("Tower");
         transform.LookAt(tower.transform.position);
@@ -30,7 +33,7 @@ public class Unit : MonoBehaviour
                 case State.ATTACK: Attack();
                 break;
                 case State.DIE:
-                Debug.Log("Die");
+                Die();
                 break;
 
         }
@@ -53,5 +56,18 @@ public class Unit : MonoBehaviour
     {
         anim.SetTrigger("Attack");
     
+    }
+
+    public void Die()
+    {
+        PhotonNetwork.Destroy(gameObject);
+    }
+    public void Damage(float damage)
+    {
+        health -= damage;
+        if(health<=0)
+        {
+            state = State.DIE;
+        }
     }
 }

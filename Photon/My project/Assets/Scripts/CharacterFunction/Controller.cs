@@ -42,6 +42,7 @@ public class Controller : MonoBehaviourPunCallbacks
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 Mouse.ActiveMouse(true, CursorLockMode.None);
+                Instantiate(Resources.Load < GameObject >("Pause PopUp"));
             }
             move.OnMove(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
             rotate.OnRotate(0,Input.GetAxisRaw("Mouse X"),0);
